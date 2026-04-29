@@ -25,7 +25,7 @@ process runRecx {
 workflow {
     if (params.help) {
         log.info """
-        recx-testflow — skeleton test workflow
+        testWorkflow — skeleton test workflow
         ======================================
         Usage:
             nextflow run main.nf [options]
