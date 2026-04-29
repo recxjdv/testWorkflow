@@ -46,7 +46,21 @@
         {"$ref": "#/definitions/output"},
         {"$ref": "#/definitions/meta"}
     ],
-    "properties": {},
+    "properties": {
+        "monochrome_logs": {
+            "type": "boolean",
+            "hidden": true
+        },
+        "validate_params": {
+            "type": "boolean",
+            "default": true,
+            "hidden": true
+        },
+        "show_hidden_params": {
+            "type": "boolean",
+            "hidden": true
+        }
+    },
     "resources": {
         "recommended": {
             "cpus": 1,
