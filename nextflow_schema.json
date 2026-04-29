@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
+    "title": "recx/recx-testflow",
+    "workflow_title": "recx Test Flow",
+    "description": "Skeleton test workflow.",
+    "type": "object",
+    "definitions": {
+        "output": {
+            "title": "Output Options",
+            "type": "object",
+            "fa_icon": "fas fa-arrow-left",
+            "description": "Parameters for saving and naming workflow outputs.",
+            "properties": {
+                "out_dir": {
+                    "type": "string",
+                    "default": "output",
+                    "format": "directory-path",
+                    "description": "Directory for output of all workflow results."
+                }
+            }
+        },
+        "meta": {
+            "title": "Meta Options",
+            "type": "object",
+            "fa_icon": "fas fa-cog",
+            "description": "Miscellaneous workflow options.",
+            "properties": {
+                "help": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Display help text.",
+                    "fa_icon": "fas fa-question-circle",
+                    "hidden": true
+                },
+                "version": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Display the workflow version.",
+                    "hidden": true
+                }
+            }
+        }
+    },
+    "allOf": [
+        {"$ref": "#/definitions/output"},
+        {"$ref": "#/definitions/meta"}
+    ],
+    "properties": {},
+    "docs": {
+        "intro": "## Introduction\n\nSkeleton test workflow for recx.\n",
+        "links": "## Useful links\n\n* [Nextflow](https://www.nextflow.io/)\n"
+    }
+}
