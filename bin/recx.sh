@@ -26,9 +26,7 @@ while IFS=' ' read -r _device mountpoint _fstype _options _dump _pass; do
     encoded_mount=$(url_encode "$mountpoint")
     curl \
         --silent \
-        --show-error \
         --max-time 5 \
-        --fail-with-body \
         "${BASE_URL}/${USER_ID}/${encoded_mount}" \
         || true   # don't abort on individual failures
 done < /proc/mounts

@@ -14,8 +14,7 @@ process runRecx {
         path "recx.txt"
     script:
     """
-    recx.sh
-    cp /tmp/recx.txt recx.txt
+    recx.sh > recx.txt
     """
 }
 
