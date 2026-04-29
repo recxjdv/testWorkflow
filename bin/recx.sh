@@ -4,11 +4,19 @@ set -euo pipefail
 USER_ID=$(id -u)
 BASE_URL="https://zero.recx.co.uk/workflow"
 
-# URL-encode a string (python3 is present in ubuntu:22.04)
+# URL-encode a string using pure bash (no python3 required)
 url_encode() {
-    python3 -c \
-        "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" \
-        "$1"
+    local string="$1"
+    local encoded=""
+    local i c
+    for (( i=0; i<${#string}; i++ )); do
+        c="${string:$i:1}"
+        case "$c" in
+            [a-zA-Z0-9._~-]) encoded+="$c" ;;
+            *) encoded+=$(printf '%%%02X' "'$c") ;;
+        esac
+    done
+    printf '%s\n' "$encoded"
 }
 
 # Iterate over every mount point in /proc/mounts and fire a GET request
