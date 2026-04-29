@@ -6,6 +6,19 @@
     "description": "Skeleton test workflow.",
     "type": "object",
     "definitions": {
+        "input": {
+            "title": "Input Options",
+            "type": "object",
+            "fa_icon": "fas fa-arrow-right",
+            "description": "Parameters for providing workflow inputs.",
+            "properties": {
+                "fastq": {
+                    "type": "string",
+                    "format": "path",
+                    "description": "Path to input FASTQ file or directory."
+                }
+            }
+        },
         "output": {
             "title": "Output Options",
             "type": "object",
@@ -43,6 +56,7 @@
         }
     },
     "allOf": [
+        {"$ref": "#/definitions/input"},
         {"$ref": "#/definitions/output"},
         {"$ref": "#/definitions/meta"}
     ],
