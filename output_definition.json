@@ -1,0 +1,13 @@
+{
+  "files": {
+    "recx-output": {
+      "filepath": "recx.txt",
+      "title": "recx output",
+      "description": "Date and mount information collected from inside the container.",
+      "mime-type": "text/plain",
+      "optional": false,
+      "type": "aggregated"
+    }
+  },
+  "cfg": {}
+}
