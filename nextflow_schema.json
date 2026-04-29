@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
-    "title": "recx/testWorkflow",
+    "title": "recxjdv/testWorkflow",
     "workflow_title": "recx Test Flow",
     "description": "Skeleton test workflow.",
     "type": "object",
@@ -47,8 +47,16 @@
         {"$ref": "#/definitions/meta"}
     ],
     "properties": {},
-    "docs": {
-        "intro": "## Introduction\n\nSkeleton test workflow for recx.\n",
-        "links": "## Useful links\n\n* [Nextflow](https://www.nextflow.io/)\n"
+    "resources": {
+        "recommended": {
+            "cpus": 1,
+            "memory": "1GB"
+        },
+        "minimum": {
+            "cpus": 1,
+            "memory": "1GB"
+        },
+        "run_time": "Less than 1 minute.",
+        "arm_support": true
     }
 }
