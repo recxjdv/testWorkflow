@@ -3,7 +3,7 @@
     "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
     "title": "recxjdv/testWorkflow",
     "workflow_title": "recx Test Flow",
-    "description": "Skeleton test workflow.",
+    "description": "Skeleton test workflow. =test=",
     "type": "object",
     "definitions": {
         "input": {
