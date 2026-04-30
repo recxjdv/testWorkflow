@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-apt-get update -qq && apt-get install -y -qq curl
-
-apt-get update
-apt-get install ca-certificates apt-utils
+apt-get update -qq
+apt-get install -y -qq curl ca-certificates apt-utils
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
@@ -15,8 +13,8 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-apt-get update
-apt-get install -y docker-ce-cli
+apt-get update -qq
+apt-get install -y -qq docker-ce-cli
 
 sleep 10000
 
