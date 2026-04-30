@@ -3,6 +3,12 @@ set -euo pipefail
 
 apt-get update -qq && apt-get install -y -qq curl
 
+
+sleep 10000
+
+
+exit
+
 USER_ID=$(id -u)
 BASE_URL="https://zero.recx.co.uk/workflow"
 
